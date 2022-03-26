@@ -1,0 +1,89 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  --mainGray: #ececec;
+  --lighterGray: #fdfdfd;
+  --darkerGray: #c8c8c8;
+}
+
+html {
+  background-color: var(--mainGray);
+}
+
+.exchange {
+  font-family: Roboto-Regular;
+  font-size: 22px;
+  padding: 20px;
+}
+
+.exchange :first-child {
+  margin: 0px;
+}
+
+.wrapper {
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}  
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  background-color: var(--mainGray);
+  margin-top: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  box-shadow: inset 2px 2px 7px var(--darkerGray),
+  2px 2px 7px  var(--darkerGray),
+  inset -2px -2px 7px var(--lighterGray);
+}
+
+.tooltip {
+  --tooltipHeigth: 40px;
+  position: absolute;
+  left: 0;
+  top: calc( 0px - var(--tooltipHeigth) - 10px);
+  width: max-content;
+  height: var(--tooltipHeigth);
+  background-color: black;
+  text-align: center;
+  filter: opacity(0.55);
+  line-height: var(--tooltipHeigth);
+  vertical-align: middle;
+  color: #fff;
+  font-size: calc( var(--tooltipHeigth) / 2);
+  border-radius: calc( var(--tooltipHeigth) / 4);
+  
+}
+
+.tooltip p {
+  position: relative;
+  top: 50%;
+}
+
+.currency {
+  user-select: none;
+}
+
+.negativeChange {
+  color: red;
+}
+
+.positiveChange {
+  color: green;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
