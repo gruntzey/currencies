@@ -130,7 +130,6 @@ function createExchangeDOM() {
       techVariables.tickersInUse[val] = currencyRawData.Valute[val]
     })
     createExchangeDOM();
-    console.log(currencyRawData)
   } else {
     alert(`HTTP-Error:  ${response.status} \n\n Возможно неполадки с серверном-донором данных`);
   }
