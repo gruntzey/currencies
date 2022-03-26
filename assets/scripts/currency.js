@@ -100,22 +100,19 @@ function createExchangeDOM() {
   
           //adjustingTooltip
           currentTooltip.style.left = -(TooltipWidth/2) - currentCardLeftOffset + currentX + 'px'
-          
+
+          //on mouseleave
           if (!techVariables.isTickerToolpisOpen) {
             currentTooltip.classList.remove('hidden')
+            currentTicker.addEventListener('mouseout', onLeavingTicker)
+            techVariables.isTickerToolpisOpen = true
           }
-          //on mouseleave
           function onLeavingTicker(e) {
             const currentTicker = e.target
             const currentTooltip = currentTicker.nextElementSibling
             currentTooltip.classList.add('hidden')
             removeEventListener('mouseout', onLeavingTicker)
             techVariables.isTickerToolpisOpen = false
-          }
-          
-          if (!techVariables.isTickerToolpisOpen) {
-            currentTicker.addEventListener('mouseout', onLeavingTicker)
-            techVariables.isTickerToolpisOpen = true
           }
         }
       })
