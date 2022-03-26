@@ -33,8 +33,10 @@ function createExchangeDOM() {
     tooltip.insertAdjacentText("beforeend",`${techVariables.tickersInUse[val].Name}`)
     currentCard.insertAdjacentElement('beforeend', tooltip)
     //tooltip adjust
-    let tooltipWidth = tooltip.getBoundingClientRect().width + 10
+    const tooltipWidth = tooltip.getBoundingClientRect().width + 10
+    const tooltipTop = -(tooltip.getBoundingClientRect().height + 10)
     tooltip.style.width = tooltipWidth+'px'
+    tooltip.style.top = tooltipTop+'px'
 
     //price
     const price = document.createElement('div')

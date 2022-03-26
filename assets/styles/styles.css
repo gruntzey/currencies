@@ -51,9 +51,9 @@ html {
   --tooltipHeigth: 40px;
   position: absolute;
   left: 0;
-  top: calc( 0px - var(--tooltipHeigth) - 10px);
-  width: max-content;
-  height: var(--tooltipHeigth);
+  /* top: calc( 0px - var(--tooltipHeigth) - 10px); properly work is not reachable for safari users :`( | should be putted by js*/ 
+  width: fit-content;
+  min-height: var(--tooltipHeigth);
   background-color: black;
   text-align: center;
   filter: opacity(0.55);
@@ -86,4 +86,5 @@ html {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  cursor: none;
 }
