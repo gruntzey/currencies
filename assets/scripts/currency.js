@@ -38,12 +38,11 @@ function createExchangeDOM() {
     //tooltip
     const tooltip = document.createElement('div')
     tooltip.classList.add('tooltip', 'hidden')
-    const text = document.createElement('div')
     tooltip.insertAdjacentText("beforeend",`${techVariables.tickersInUse[val].Name}`)
     currentCard.insertAdjacentElement('beforeend', tooltip)
     //tooltip adjust
     const tooltipWidth = tooltip.getBoundingClientRect().width + 50
-    const tooltipTop = (tooltip.getBoundingClientRect().height +5)
+    const tooltipTop = (tooltip.getBoundingClientRect().height + 5)
     tooltip.style.width = tooltipWidth+'px'
     tooltip.style.top = tooltipTop+'px'
 
