@@ -42,8 +42,8 @@ function createExchangeDOM() {
     tooltip.insertAdjacentText("beforeend",`${techVariables.tickersInUse[val].Name}`)
     currentCard.insertAdjacentElement('beforeend', tooltip)
     //tooltip adjust
-    const tooltipWidth = tooltip.getBoundingClientRect().width + 10
-    const tooltipTop = -(tooltip.getBoundingClientRect().height + 10)
+    const tooltipWidth = tooltip.getBoundingClientRect().width + 20
+    const tooltipTop = -(tooltip.getBoundingClientRect().height + 20)
     tooltip.style.width = tooltipWidth+'px'
     tooltip.style.top = tooltipTop+'px'
 
@@ -280,7 +280,6 @@ function createExchangeDOM() {
       techVariables.tickersInUse[val] = currencyRawData.Valute[val]
     })
     createExchangeDOM()
-    console.log(currencyRawData)
   } else {
     alert(`HTTP-Error:  ${response.status} \n\n Возможно неполадки с сервером-донором данных`)
   }
