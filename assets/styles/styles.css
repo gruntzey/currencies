@@ -56,8 +56,8 @@ html {
   --tooltipHeigth: 40px;
   position: absolute;
   left: 0;
+  z-index: 1;
   /* top: calc( 0px - var(--tooltipHeigth) - 10px); properly work is not reachable for safari users :`( | should be putted by js*/ 
-  width: fit-content;
   min-height: var(--tooltipHeigth);
   background-color: black;
   text-align: center;
