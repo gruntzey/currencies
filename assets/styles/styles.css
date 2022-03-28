@@ -182,7 +182,7 @@ html {
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--mainGray);
+  color: #000;
   width: max-content;
   height: max-content;
 }
