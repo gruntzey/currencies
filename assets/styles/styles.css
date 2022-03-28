@@ -177,3 +177,12 @@ html {
 .rightValue {
   border-bottom: 3px solid rgb(0, 255, 0);
 }
+
+#hidden {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--mainGray);
+  width: max-content;
+  height: max-content;
+}

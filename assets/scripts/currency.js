@@ -304,8 +304,7 @@ function createHowManyDaysBlock() {
       if (input.value.length >= 1 &&
           input.value.length < 3 &&
           /^\d+$/.test(input.value) &&
-          Number(input.value) >= 2 ) {
-        console.log(Number(input.value) )
+          Number(input.value) >= 2) {
         return true
       } else {
         return false
@@ -316,9 +315,7 @@ function createHowManyDaysBlock() {
       if (validator()) {
         input.classList.add('rightValue')
         input.classList.remove('wrongValue')
-        console.log(e.code)
         if (e.code == 'Enter' || e.code =='NumpadEnter') {
-          console.log('enter')
           configObj.DaysNumber = Number(input.value)
           input.value = ''
         }
@@ -327,7 +324,6 @@ function createHowManyDaysBlock() {
         input.classList.remove('rightValue')
       }
     }, 0)
-    
   })
 }
 
@@ -347,3 +343,7 @@ function createHowManyDaysBlock() {
     alert(`HTTP-Error:  ${response.status} \n\n Возможно неполадки с сервером-донором данных`)
   }
 })()
+
+document.addEventListener('keydown', (e) => {
+  document.getElementById('hidden').textContent = e.code
+})
