@@ -300,7 +300,7 @@ function createHowManyDaysBlock() {
 
 
   //handling input
-  input.addEventListener('keydown', (e) => {
+  input.addEventListener('keyup', (e) => {
     function validator() {
       if (input.value.length >= 1 &&
           input.value.length < 3 &&
@@ -312,19 +312,17 @@ function createHowManyDaysBlock() {
       }
     }
 
-    setTimeout(() => {
-      if (validator()) {
-        input.classList.add('rightValue')
-        input.classList.remove('wrongValue')
-        if (e.code == 'Enter' || e.code =='NumpadEnter') {
-          configObj.DaysNumber = Number(input.value)
-          input.value = ''
-        }
-      } else {
-        input.classList.add('wrongValue')
-        input.classList.remove('rightValue')
+    if (validator()) {
+      input.classList.add('rightValue')
+      input.classList.remove('wrongValue')
+      if (e.code == 'Enter' || e.code =='NumpadEnter') {
+        configObj.DaysNumber = Number(input.value)
+        input.value = ''
       }
-    }, 0)
+    } else {
+      input.classList.add('wrongValue')
+      input.classList.remove('rightValue')
+    }
   })
 }
 
