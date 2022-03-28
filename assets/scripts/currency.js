@@ -343,7 +343,3 @@ function createHowManyDaysBlock() {
     alert(`HTTP-Error:  ${response.status} \n\n Возможно неполадки с сервером-донором данных`)
   }
 })()
-
-document.addEventListener('keydown', (e) => {
-  document.getElementById('hidden').textContent = e.code
-})
