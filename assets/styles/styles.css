@@ -75,6 +75,7 @@ html {
 
 .currency {
   user-select: none;
+  cursor: pointer;
 }
 
 .negativeChange {
