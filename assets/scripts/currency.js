@@ -320,8 +320,13 @@ function createHowManyDaysBlock() {
         input.value = ''
       }
     } else {
-      input.classList.add('wrongValue')
-      input.classList.remove('rightValue')
+      if (input.value.length !== 0) {
+        input.classList.add('wrongValue')
+        input.classList.remove('rightValue')
+      } else {
+        input.classList.remove('wrongValue')
+        input.classList.remove('rightValue')
+      }
     }
   })
 }
