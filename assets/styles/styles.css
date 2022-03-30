@@ -78,6 +78,11 @@ html {
   cursor: pointer;
 }
 
+.currency:hover {
+  background-color: var(--lighterGray);
+  box-shadow: 0 0 7px 5px var(--lighterGray);
+}
+
 .negativeChange {
   color: red;
 }
