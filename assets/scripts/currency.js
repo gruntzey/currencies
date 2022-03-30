@@ -85,7 +85,7 @@ function createExchangeDOM() {
     //on touch
     function tooltipTouch(e) {
       
-      configObj.tickers.forEach((val, i) => {
+      configObj.tickers.forEach((val) => {
         if (e.target.classList.contains(`${val}-currency`)) {
           if (!techVariables.touchTimeouts[val]) {
             techVariables.touchTimeouts[val] = true
@@ -105,7 +105,7 @@ function createExchangeDOM() {
 
     //on mousemove
     tickersContainer.addEventListener('mousemove', (e) => {
-      configObj.tickers.forEach((val, i) => {
+      configObj.tickers.forEach((val) => {
         
         if (e.target.classList.contains(`${val}-currency`)) {
           const currentTicker = e.target
@@ -339,7 +339,7 @@ function createHowManyDaysBlock() {
     techVariables.PreviousURL = currencyRawData.PreviousURL
     techVariables.PreviousURLRestore = currencyRawData.PreviousURL
     techVariables.currencyRawData = currencyRawData
-    configObj.tickers.forEach((val,i)=>{
+    configObj.tickers.forEach((val)=>{
       techVariables.tickersInUse[val] = currencyRawData.Valute[val]
     })
     createExchangeDOM()
