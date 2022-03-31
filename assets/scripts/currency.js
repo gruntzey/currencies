@@ -94,7 +94,6 @@ function createExchangeDOM() {
             currentTooltip.classList.remove('hidden')
             setTimeout(() => {
               currentTooltip.classList.add('hidden')
-              currentTicker.classList.remove('currency:hover')
               techVariables.touchTimeouts[val] = false
             }, 1500)
           }
