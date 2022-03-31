@@ -15,7 +15,7 @@ const techVariables = {
   PreviousURL: '',
   currentPrice: '',
   touchTimeouts: {},
-  month: ["Январь","Февраль","Март","Апр","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+  month: ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
 }
 
 let temp
@@ -94,6 +94,7 @@ function createExchangeDOM() {
             currentTooltip.classList.remove('hidden')
             setTimeout(() => {
               currentTooltip.classList.add('hidden')
+              currentTicker.classList.remove('currency:hover')
               techVariables.touchTimeouts[val] = false
             }, 1500)
           }
@@ -112,12 +113,12 @@ function createExchangeDOM() {
           const currentCard = currentTicker.parentNode
           const currentTooltip = currentTicker.nextElementSibling
   
-          const TooltipWidth = currentTooltip.getBoundingClientRect().width
+          const tooltipWidth = currentTooltip.getBoundingClientRect().width
           const currentCardLeftOffset = currentCard.getBoundingClientRect().left
           const currentX = e.clientX
   
           //adjustingTooltip
-          currentTooltip.style.left = -(TooltipWidth/2) - currentCardLeftOffset + currentX + 'px'
+          currentTooltip.style.left = -(tooltipWidth/2) - currentCardLeftOffset + currentX + 'px'
 
           //on mouseleave
           if (!techVariables.isTickerToolpisOpen) {
