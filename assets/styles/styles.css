@@ -187,6 +187,10 @@ html {
   border-bottom: 3px solid rgb(0, 255, 0);
 }
 
+.nullValue {
+  border-bottom: 3px solid transparent;
+}
+
 #hidden {
   position: absolute;
   left: 0;

@@ -225,7 +225,7 @@ function createStatisticSheet() {
               const month = techVariables.month[date.getMonth()];
               const day = date.getDate()
               const dayPrice =Math.round(currencyRawData.Valute[val].Value*100)/100 
-              const dayPreviousPrice = currencyRawData.Valute[val].Previous
+              const dayPreviousPrice = (currencyRawData.Valute[val].Previous*100)/100
 
               //insert date info
               const statisticDay = document.createElement('div')
@@ -295,6 +295,7 @@ function createHowManyDaysBlock() {
   //creating input
   const input = document.createElement('input')
   input.id = 'questionInput'
+  input.classList.add('nullValue')
   questionContainer.insertAdjacentElement('beforeend', input)
   input.focus()
 
@@ -314,7 +315,7 @@ function createHowManyDaysBlock() {
 
     if (validator()) {
       input.classList.add('rightValue')
-      input.classList.remove('wrongValue')
+      input.classList.remove('wrongValue', 'nullValue')
       if (e.code == 'Enter' || e.code =='NumpadEnter') {
         configObj.DaysNumber = Number(input.value)
         input.value = ''
@@ -322,10 +323,11 @@ function createHowManyDaysBlock() {
     } else {
       if (input.value.length !== 0) {
         input.classList.add('wrongValue')
-        input.classList.remove('rightValue')
+        input.classList.remove('rightValue', 'nullValue')
       } else {
-        input.classList.remove('wrongValue')
-        input.classList.remove('rightValue')
+        input.classList.add('nullValue')
+        input.classList.remove('wrongValue', 'rightValue')
+        nullValue
       }
     }
   })
