@@ -327,7 +327,6 @@ function createHowManyDaysBlock() {
       } else {
         input.classList.add('nullValue')
         input.classList.remove('wrongValue', 'rightValue')
-        nullValue
       }
     }
   })
